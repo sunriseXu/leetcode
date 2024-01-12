@@ -45,9 +45,20 @@ class Solution(object):
         return res
     def best2(self, nums, k):
         nums.sort()
-        
+        res, l, r = 0, 0, len(nums) - 1
+        while l < r:
+            s = nums[l] + nums[r]
+            if s < k:
+                l += 1
+            elif s > k:
+                r -= 1
+            else:
+                res += 1
+                l += 1
+                r -= 1
+        return res
         
         
 sol = Solution()
-res = sol.best1([3,1,3,4,3], 6)
+res = sol.best2([3,1,3,4,3], 6)
 print(res)
