@@ -27,6 +27,5 @@ class Solution(object):
         return stack[0]
 
 sol = Solution()
-res = sol.evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
-)
+res = sol.evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"])
 print(res)
