@@ -6,12 +6,12 @@ class Solution(object):
         [-2,1,-3,4,-1,2,1,-5,4]
         [4,-1,2,1]
         """
-        arr = [0]
-        maxSum = float('-inf')
-        for i in range(len(nums)):
-            arr.append(max(arr[-1] + nums[i], nums[i]))
-            maxSum = max(arr[-1], maxSum)
-        return maxSum
+        maxsum = nums[0]
+        currSum = 0
+        for num in nums:
+            currSum = max(currSum+num, num)
+            maxsum = max(currSum, maxsum)
+        return maxsum
 
 sol = Solution()
 res = sol.maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
